@@ -1,0 +1,22 @@
+/*
+	Objetivo Pessoal: Fazer isso o mais curto possível;
+
+	A Função:
+    {
+		Ele lê uma linha de um arquivo. Uma linha por vez;
+		Uma linha termina com '\n'.
+	}
+	Processo:
+	{
+		1. É indicado um arquivo para a função - vai ser aberto com open();
+		2. É necessário um utilitário que conte os caracteres até um \n ou o final do arquivo;
+		3. Com read(), o programa vai ler um número de bytes que vai dar o utilitário.;
+		4. Como a função deve devolver uma string, o que foi lido pelo read() deve ser depositado numa 
+		variável.
+	}
+	Utilidades:
+	{
+		strlen - pegar quão longe vai a linha (para quando encontrar um \n ou \0);
+		substr - para fazer a sub string contendo a linha a ser lida;
+	}
+*/
