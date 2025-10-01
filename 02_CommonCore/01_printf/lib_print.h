@@ -6,8 +6,12 @@
 /*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 17:39:51 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/09/09 17:41:02 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/09/30 21:20:25 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIB_PRINT_H
+#include <stdarg.h>
+#endif
 
+int	ft_print(const char *, ...);
