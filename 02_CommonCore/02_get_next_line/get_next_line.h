@@ -6,7 +6,7 @@
 /*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 20:44:41 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/16 19:04:06 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/10/16 19:39:53 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
-# endif
-
-# ifndef OPEN_MAX
-#  define BUFFER_SIZE 10240
 # endif
 
 char	*get_next_line(int fd);
