@@ -12,34 +12,50 @@
 
 #include "lib_print.h"
 
+static int	wh_f_is(const char f, va_list args);
+
 int	ft_print(const char *str, ...)
 {
 	va_list	args;
-	char	*print;
 	int	cont;
 	int	i;
 
 	va_start(args);
 	cont = 0;
+	i = 0;
 	while (str)
 	{
 		if (str[i] = "%")
 		{
-			if (checking (str[i + 1]) = )
-			
+			i++;
+			count += wh_f_is(str[i], args);
 		}
-		cont++;
+		else
+		{
+			count++;
+			write(1, &str[i], 1);
+		}
+		i++;
 	}
-
+	va_end(args)
 	return (cont);
-/*
-	5. Ele vai pegar o que tiver no próximo arg e juntar com o tipo indentificado em 4, para escrever o que está ali e contar quantos carecteres tem ali;
-	6. Ele vai continuar repetindo isso até chegar em um \0;
-	7. O programa devolve o int com o número de caracteres escritos.
-*/
 }
 
-int	checking(const char *var, int cont)
+static int	wh_f_is(const char f, va_list args)
 {
-	
+	if (f == 'c')
+		return (vr_char(va_arg(args, int)));
+	if (f == 's')
+		return (vr_str(va_arg(args, char *)));
+	if (f == 'd')
+		return (vr_dec(va_args(args, int)));
+	if (f == 'x' || f == 'X')
+		return (vr_hex(va_args(args, unsigned int), f));
+	if (f == 'p')
+		return (vr_point(va_args(args, void *)));
+	if (f == 'u')
+		return (vr_unsig(va_args(args, unsigned int)));
+	if (f == '%')
+		return (ft_print_char('%'));
+	return (0);
 }
