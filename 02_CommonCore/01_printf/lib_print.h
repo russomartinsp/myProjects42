@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lib_print.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 17:39:51 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/07 19:31:54 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/10/22 11:20:53 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int	ft_print(const char *, ...);
 int	vr_char(int c);
-int	vr_dec(int d);
+static int	vr_dec(int d);
 int	vr_hex(unsigned int h, char f);
 int	vr_point(void *ptr);
 int	vr_str(char *str);

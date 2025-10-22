@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   vr_char.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 19:17:00 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/07 19:31:53 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/10/22 11:00:04 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_print.h"
 
-
+int	vr_char(int c)
+{
+	return (write(1, &c, 1));
+}

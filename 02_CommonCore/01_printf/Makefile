@@ -1,16 +1,19 @@
-# ************************************************************:q**************** #
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/26 16:06:44 by rusdos-s          #+#    #+#              #
-#    Updated: 2025/10/07 19:31:51 by rusdos-s         ###   ########.fr        #
+#    Created: 2025/10/21 21:21:34 by marvin            #+#    #+#              #
+#    Updated: 2025/10/22 10:58:08 by rusdos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
+
+CC = gcc
+AR = ar rcs
 
 SRC = ft_print.c\
 	vr_char.c\
@@ -26,4 +29,20 @@ CFL = -Werror -Wextra -Wall
 
 OBJ = $(SRC: .c=.o)
 
-all
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+
+%.o %.c lib_print.h
+	$(CC) $(CFL) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
