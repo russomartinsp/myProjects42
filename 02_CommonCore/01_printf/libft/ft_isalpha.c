@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vr_char.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 19:17:00 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 16:42:37 by rusdos-s         ###   ########.fr       */
+/*   Created: 2025/07/21 16:08:26 by rusdos-s          #+#    #+#             */
+/*   Updated: 2025/07/30 20:46:09 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	vr_char(int c)
+int	ft_isalpha(int c)
 {
-	return (write(1, &c, 1));
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
 }

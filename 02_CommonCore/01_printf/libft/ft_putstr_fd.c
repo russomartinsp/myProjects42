@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vr_char.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 19:17:00 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 16:42:37 by rusdos-s         ###   ########.fr       */
+/*   Created: 2025/08/21 17:20:58 by rusdos-s          #+#    #+#             */
+/*   Updated: 2025/08/21 17:32:31 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	vr_char(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	return (write(1, &c, 1));
+	int	i;
+
+	i = 0;
+	if (fd == 0)
+		fd = 1;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

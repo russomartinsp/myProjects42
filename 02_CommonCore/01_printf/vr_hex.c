@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_print.h"
+#include "ft_printf.h"
 
 static int	hex_f(unsigned int n, const char *b);
 

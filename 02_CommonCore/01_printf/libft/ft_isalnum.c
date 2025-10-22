@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vr_char.c                                          :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 19:17:00 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 16:42:37 by rusdos-s         ###   ########.fr       */
+/*   Created: 2025/07/21 17:51:21 by rusdos-s          #+#    #+#             */
+/*   Updated: 2025/07/30 20:45:15 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	vr_char(int c)
+int	ft_isalnum(int c)
 {
-	return (write(1, &c, 1));
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }

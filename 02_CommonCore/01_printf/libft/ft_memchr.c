@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vr_char.c                                          :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 19:17:00 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 16:42:37 by rusdos-s         ###   ########.fr       */
+/*   Created: 2025/07/22 19:38:12 by rusdos-s          #+#    #+#             */
+/*   Updated: 2025/08/11 19:56:40 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	vr_char(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	return (write(1, &c, 1));
+	char		*str;
+	size_t		i;
+
+	i = 0;
+	str = (char *)s;
+	while (i < n)
+	{
+		if (*str == (char )c)
+			return ((void *)str);
+		str++;
+		i++;
+	}
+	return (0);
 }

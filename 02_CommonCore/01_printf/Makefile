@@ -6,42 +6,41 @@
 #    By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 21:21:34 by marvin            #+#    #+#              #
-#    Updated: 2025/10/22 10:58:08 by rusdos-s         ###   ########.fr        #
+#    Updated: 2025/10/22 20:31:40 by rusdos-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
+LIBFT = libft.a
+ARLIB = ./libft
+CC = gcc -Werror -Wextra -Wall
+SRC = ft_printf.c \
+	vr_char.c \
+	vr_dec.c \
+	vr_hex.c \
+	vr_point.c \
+	vr_str.c \
+	vr_unsig.c
+OBJ = $(SRC:.c=.o)
 
-CC = gcc
-AR = ar rcs
-
-SRC = ft_print.c\
-	vr_char.c\
-	vr_string.c\
-	vr_pointer.c\
-	vr_dec.c\
-	vr_int.c\
-	vr_hexmin.c\
-	vr_hexmai.c\
-	vr_perc.c\
-
-CFL = -Werror -Wextra -Wall
-
-OBJ = $(SRC: .c=.o)
+%.o: %.c ft_printf.h
+	${CC} -I -c $< -o ${<:.c=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-
-%.o %.c lib_print.h
-	$(CC) $(CFL) -c $< -o $@
+	@make -C $(ARLIB)
+	@cp $(ARLIB)/$(LIBFT) .
+	@mv $(LIBFT) $(NAME)
+	@ar rcs $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
+	cd $(ARLIB) && make clean
 
 fclean: clean
 	rm -f $(NAME)
+	cd $(ARLIB) && make fclean
 
 re: fclean all
 

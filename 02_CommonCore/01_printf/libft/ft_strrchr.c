@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vr_char.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 19:17:00 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 16:42:37 by rusdos-s         ###   ########.fr       */
+/*   Created: 2025/07/24 11:55:54 by rusdos-s          #+#    #+#             */
+/*   Updated: 2025/08/08 17:42:02 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	vr_char(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (write(1, &c, 1));
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (char )c)
+		{
+			return ((char *)(s + i));
+		}
+		i--;
+	}
+	return (0);
 }

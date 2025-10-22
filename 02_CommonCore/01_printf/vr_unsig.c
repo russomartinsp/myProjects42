@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_print.h"
+#include "ft_printf.h"
 
 static int	nbr_len(unsigned int n);
 
-int	unsig(unsigned int u)
+int	vr_unsig(unsigned int u)
 {
 	if (u == 0)
 		return (write(1, "0", 1));

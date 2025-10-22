@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	nbr_print(int n);
+#include "ft_printf.h"
 
-static int	vr_dec(int d)
+static int	nbr_print(int n);
+
+int	vr_dec(int d)
 {
 	int		l;
 	long	nbr;
@@ -28,11 +30,11 @@ static int	vr_dec(int d)
 	{
 		l += nbr_print(nbr / 10);
 	}
-	l += ft_print_char((nbr % 10) + '0');
+	l += vr_char((nbr % 10) + '0');
 	return (l);
 }
 
-int	nbr_print(int n)
+static int	nbr_print(int n)
 {
 	if (n == 0)
 		return (write(1, "0", 1));

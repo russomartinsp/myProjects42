@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
 static int	ptr_len(unsigned long long n);
 
 int	vr_point(void *ptr)
 {
-	unsigned long long	p;
-	int					l;
+	unsigned long long		p;
+	int						l;
 
 	if (ptr == NULL)
 		return (write(1, "(nil)", 5));
@@ -28,9 +30,9 @@ int	vr_point(void *ptr)
 
 static int	ptr_len(unsigned long long n)
 {
-	int	l;
+	int		l;
 	char	*b;
-	
+
 	l = 0;
 	b = "0123456789abcdef";
 	if (n >= 16)
