@@ -3,30 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rusdos-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 20:41:48 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/16 20:30:49 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/10/22 10:34:19 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_stash(char *stash, char *ptr_nline);
-static char	*ft_line(char *stash);
-static char	*ft_gbuf(char *stash, char *buf, ssize_t bts);
-static char	*ft_readgzero(int fd, char *stash);
+char	*r_file(int fd, char *f);
 
 char	*get_next_line(int fd)
 {
-	static char		*stash;
-	char			*l;
-	char			*buf;
+	char		*l;
+	static char	*f;
 
-	buf = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	f = r_file(fd, f);
+	if (!f)
+		return (NULL);
+	l = current_line(f);
+	f = update_file(f);
+	return (l);
+}
+
+char	*r_file(int fd, char *f)
+{
+	char	*buff;
+	int		b_read;
+
+	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (NULL);
+	b_read = 1;
+	while (!ft_strchr(f, '\n') && b_read != 0)
 	{
-		free(buf);
-		return (0);
+		b_read = read(fd, buff, BUFFER_SIZE);
+		if (b_read == -1)
+		{
+			free(buff);
+			free(f);
+			return (NULL);
+		}
+		buff[b_read] = '\0';
+		f = ft_strjoin(f, buff);
 	}
+	free(buff);
+	return (f);
 }
