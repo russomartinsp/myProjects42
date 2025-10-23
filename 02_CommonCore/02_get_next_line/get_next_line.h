@@ -6,12 +6,12 @@
 /*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 20:44:41 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 10:26:10 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:07:42 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-# define GET_NET_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <stdlib.h>
 # include <unistd.h>

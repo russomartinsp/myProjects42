@@ -6,7 +6,7 @@
 /*   By: rusdos-s <rusdos-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 17:21:31 by rusdos-s          #+#    #+#             */
-/*   Updated: 2025/10/22 10:23:00 by rusdos-s         ###   ########.fr       */
+/*   Updated: 2025/10/23 09:12:22 by rusdos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strjoin(char *s1, char *s2)
 			str[i] = s1[i];
 	while (s2[j] != '\0')
 		str[i++] = s2[j++];
-	str[ft_strlen(file) + ft_strlen(s2)] = '\0';
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	free(s1);
 	return (str);
 }
@@ -109,7 +109,7 @@ char	*up_file(char *f)
 		free(f);
 		return (NULL);
 	}
-	str = (char *)malloc(sizeof(char) * (gnl_strlen(f) - i + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(f) - i + 1));
 	if (!str)
 		return (NULL);
 	j = 0;
