@@ -24,7 +24,7 @@ int	vr_point(void *ptr)
 	p = (unsigned long long)ptr;
 	l = 0;
 	l += write(1, "0x", 2);
-	l += ft_putptr_len(p);
+	l += ptr_len(p);
 	return (l);
 }
 
@@ -37,6 +37,6 @@ static int	ptr_len(unsigned long long n)
 	b = "0123456789abcdef";
 	if (n >= 16)
 		l += ptr_len(n / 16);
-	l += ft_print_char(b[n % 16]);
+	l += vr_char(b[n % 16]);
 	return (l);
 }

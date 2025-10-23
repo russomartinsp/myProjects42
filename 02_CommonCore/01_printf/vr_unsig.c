@@ -18,7 +18,7 @@ int	vr_unsig(unsigned int u)
 {
 	if (u == 0)
 		return (write(1, "0", 1));
-	return (nbr_len(n));
+	return (nbr_len(u));
 }
 
 static int	nbr_len(unsigned int n)
@@ -28,8 +28,8 @@ static int	nbr_len(unsigned int n)
 	l = 0;
 	if (n >= 10)
 	{
-		l += unbr_len(n / 10);
+		l += nbr_len(n / 10);
 	}
-	l += unsig((n % 10) + '0');
+	l += vr_unsig((n % 10) + '0');
 	return (l);
 }

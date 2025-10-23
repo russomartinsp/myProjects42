@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	vr_str(char *str)
+int	vr_str(char *s)
 {
 	int	i;
 
