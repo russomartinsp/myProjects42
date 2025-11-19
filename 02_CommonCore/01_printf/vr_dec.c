@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	nbr_print(int n);
+int	nbr_print(int n);
 
 int	vr_dec(int d)
 {
@@ -28,13 +28,13 @@ int	vr_dec(int d)
 	}
 	if (nbr >= 10)
 	{
-		l += nbr_print(nbr / 10);
+		l += vr_dec(nbr / 10);
 	}
 	l += vr_char((nbr % 10) + '0');
 	return (l);
 }
 
-static int	nbr_print(int n)
+int	nbr_print(int n)
 {
 	if (n == 0)
 		return (write(1, "0", 1));

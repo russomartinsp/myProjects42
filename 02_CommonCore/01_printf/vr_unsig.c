@@ -30,6 +30,6 @@ static int	nbr_len(unsigned int n)
 	{
 		l += nbr_len(n / 10);
 	}
-	l += vr_unsig((n % 10) + '0');
+	l += vr_char((n % 10) + '0');
 	return (l);
 }
